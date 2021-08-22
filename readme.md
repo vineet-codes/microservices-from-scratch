@@ -1,4 +1,4 @@
-# Notes while building a mini microservice app from scratch
+# A mini microservice app from scratch
 
 To run this application:
 
@@ -10,9 +10,11 @@ YOU SHOULD SEE SOMETHING LIKE BELOW:
 
 <img src="./notes-assets/app.png" alt="app homepage screen" width="600" />
 
-**Note**: you will have to edits your `/etc/hosts` file to point `127.0.0.1` to `posts.com`.
-**Note**: This also assumes you have docker for destop installed on your machine where you are trying to run this application.
-**Note**: Ofcourse, you also need to install skaffold cli. For mac do `brew install skaffold`
+1. **Note**: you will have to edits your `/etc/hosts` file to point `127.0.0.1` to `posts.com`.
+2. **Note**: This also assumes you have docker for destop installed on your machine where you are trying to run this application.
+3. **Note**: Ofcourse, you also need to install skaffold cli. For mac do `brew install skaffold`
+
+---
 
 Bezo's wrote this in 2002,
 
