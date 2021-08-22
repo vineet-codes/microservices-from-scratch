@@ -1,8 +1,22 @@
 # Notes while building a mini microservice app from scratch
 
+To run this application:
+
+> run `skaffold dev`
+
+when application starts, go to `posts.com` in your browser.
+
+YOU SHOULD SEE SOMETHING LIKE BELOW:
+
+<img src="./notes-assets/app.png" alt="app homepage screen" width="600" />
+
+**Note**: you will have to edits your `/etc/hosts` file to point `127.0.0.1` to `posts.com`.
+**Note**: This also assumes you have docker for destop installed on your machine where you are trying to run this application.
+**Note**: Ofcourse, you also need to install skaffold cli. For mac do `brew install skaffold`
+
 Bezo's wrote this in 2002,
 
-<img src="./bezos-api-manifesto.png" alt="bezos api mandate" width="400" />
+<img src="./notes-assets/bezos-api-manifesto.png" alt="bezos api mandate" width="400" />
 
 But:
 
@@ -40,8 +54,21 @@ But:
 
 - Colocating deployment and service configuration helps. We do this.
 - To _update a deployment/service_
+
   - the deployment must be using the latest tag in the pod spec section
   - Make an update to your code
   - Build the docker image
   - Push the image to docker
   - Run the command: `kubectl rollout restart deployment [depl_name]`
+
+- We use [skaffold](https://skaffold.dev/) to automate a lot of manual steps we do to make our dev expreience more intentfull.
+
+Skaffold is
+
+> A tool that facilitates continuous development for Kubernetes applications.
+
+It does really three things:
+
+- when we start, bring up all the manifests
+- When we make a change to our manifests directory, restart the kubernetes objects
+- When we are done, delete all the objects
